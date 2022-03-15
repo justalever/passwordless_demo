@@ -1,0 +1,12 @@
+<div class="max-w-xl p-8 rounded-xl mx-auto text-center my-16 bg-gray-50">
+  <h1 class="font-black text-2xl mb-6">Sign in</h1>
+
+  <%= form_for @session, url: send(Passwordless.mounted_as).sign_in_path, data: { turbo: false } do |f| %>
+    <% email_field_name = :"passwordless[#{@email_field}]" %>
+
+    <%= text_field_tag email_field_name, params.fetch(email_field_name, nil), placeholder: "Enter email", class: "block w-full px-3 py-2 focus:ring-sky-100 ring-4 border ring-transparent focus:outline-none rounded mb-3" %>
+
+    <%= f.submit I18n.t('passwordless.sessions.new.submit'), class: "bg-sky-500 font-medium px-3 py-2 text-white w-full text-center hover:bg-sky-600 cursor-pointer rounded" %>
+  <% end %>
+
+</div>

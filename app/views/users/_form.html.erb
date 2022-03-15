@@ -1,0 +1,13 @@
+<%= form_with(model: user, data: { turbo: false}) do |form| %>
+  <div class="mb-6">
+    <%= form.label :username, class: "block text-left mb-2" %>
+    <%= form.text_field :username, class: "block w-full px-3 py-2 focus:ring-sky-100 ring-4 border ring-transparent focus:outline-none rounded" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :email, class: "block text-left mb-2" %>
+    <%= form.text_field :email, class: "block w-full px-3 py-2 focus:ring-sky-100 ring-4 border ring-transparent focus:outline-none rounded" %>
+  </div>
+
+  <%= form.submit "Create account", class: "bg-emerald-500 font-medium px-3 py-2 text-white w-full text-center hover:bg-emerald-600 cursor-pointer rounded" %>
+<% end %>
